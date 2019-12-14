@@ -16,7 +16,7 @@ class CreatePostsTable extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('post_content');
-            $table->dateTime('post_date');
+            $table->dateTime('post_date') -> default(Carbon::now());
             $table->timestamps();
         });
     }
